@@ -17,14 +17,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/register", "/api/users/register").permitAll()
-                        .anyRequest().authenticated()
+                        //.requestMatchers("/register", "/api/users/register").permitAll()
+                        .anyRequest().permitAll()
                 )
-                .formLogin(form -> form
-                        .loginPage("/api/user/login") // 로그인 페이지 URL
-                        .defaultSuccessUrl("/home", true) // 로그인 성공 시 이동할 URL
-                        .failureUrl("/api/user/login?error=true") // 로그인 실패 시 이동할 URL
-                )
+//                .formLogin(form -> form
+//                        .loginPage("/api/user/login") // 로그인 페이지 URL
+//                        .defaultSuccessUrl("/home", true) // 로그인 성공 시 이동할 URL
+//                        .failureUrl("/api/user/login?error=true") // 로그인 실패 시 이동할 URL
+//                )
                 .csrf(csrf -> csrf.disable());
 
         return http.build();

@@ -25,7 +25,7 @@ public class UserRegisterController {
     @GetMapping("/register")
     public String showRegisterPage(Model model) {
         model.addAttribute("userDTO", new UserDTO());
-        return "Register";
+        return "login";
     }
 
     // 회원가입 처리
