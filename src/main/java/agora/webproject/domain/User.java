@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Getter
 @AllArgsConstructor //생성자 자동 생성(Lombok)
 @NoArgsConstructor //매개변수 없는 기본 생성자 자동 생성(Lombok)
 @Builder //Builder 패턴으로 객체 생성
